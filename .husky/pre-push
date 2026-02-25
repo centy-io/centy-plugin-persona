@@ -1,1 +1,2 @@
-# pre-push hook (configured in issue #10)
+pnpm run build || { echo "❌ TypeScript compilation failed. Fix build errors before pushing."; exit 1; }
+pnpm run test:coverage || { echo "❌ Tests failed or coverage below 100%. Fix before pushing."; exit 1; }
