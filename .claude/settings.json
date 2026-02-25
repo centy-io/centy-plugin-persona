@@ -1,6 +1,11 @@
 {
   "permissions": {
-    "allow": ["Bash(centy:*)"],
+    "allow": [
+      "Bash(centy:*)",
+      "Bash(gh repo:*)",
+      "Bash(grep:*)",
+      "Bash(python3:*)"
+    ],
     "deny": ["Bash(npm install)", "Bash(gh issue create:*)"]
   },
   "hooks": {
