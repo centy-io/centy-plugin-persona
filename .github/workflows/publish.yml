@@ -27,6 +27,6 @@ jobs:
 
       - run: pnpm run build
 
+      - run: npm config delete //registry.npmjs.org/:_authToken
+
       - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ''
