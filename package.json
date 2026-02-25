@@ -1,0 +1,32 @@
+{
+  "name": "@centy/persona",
+  "version": "0.1.0",
+  "description": "Persona CLI by Centy",
+  "license": "MIT",
+  "author": "Centy",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bin": {
+    "persona": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
