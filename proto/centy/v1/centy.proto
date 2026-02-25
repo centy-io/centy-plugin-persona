@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package centy.v1;
+
+service CentyService {
+  rpc CreateItemType (CreateItemTypeRequest) returns (CreateItemTypeResponse);
+}
+
+message FieldDefinition {
+  string name = 1;
+  string type = 2;
+}
+
+message CreateItemTypeRequest {
+  string project_path = 1;
+  string name = 2;
+  repeated FieldDefinition custom_fields = 3;
+}
+
+message CreateItemTypeResponse {
+  string id = 1;
+}

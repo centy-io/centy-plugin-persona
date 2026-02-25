@@ -5,8 +5,13 @@
   "dictionaries": ["typescript", "node", "software-terms"],
   "words": [
     "centy",
+    "creds",
+    "grpc",
+    "oneofs",
     "oclif",
     "persona",
+    "protobuf",
+    "protoloader",
     "tsup",
     "tsconfig",
     "pnpm",

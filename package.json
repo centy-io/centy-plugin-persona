@@ -32,6 +32,7 @@
   },
   "files": [
     "dist",
+    "proto",
     "README.md"
   ],
   "scripts": {
@@ -68,6 +69,8 @@
     "access": "public"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.14.3",
+    "@grpc/proto-loader": "^0.8.0",
     "@oclif/core": "^4.8.1"
   }
 }
