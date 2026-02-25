@@ -42,10 +42,11 @@
     "lint:spell": "cspell \"**/*.{ts,md,json}\"",
     "prepublishOnly": "pnpm run build",
     "prepare": "husky",
-    "test": "vitest run",
     "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.4.2",
+    "@commitlint/config-conventional": "^20.4.2",
     "@types/node": "^25.3.0",
     "@vitest/coverage-v8": "^4.0.18",
     "cspell": "^9.7.0",
