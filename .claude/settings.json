@@ -19,7 +19,10 @@
       "Bash(npx centy:*)",
       "mcp__ide__getDiagnostics",
       "Bash(gh run:*)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:docs.npmjs.com)",
+      "WebFetch(domain:vcfvct.wordpress.com)",
+      "WebFetch(domain:github.blog)"
     ],
     "deny": ["Bash(npm install)", "Bash(gh issue create:*)"]
   },
