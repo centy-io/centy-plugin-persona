@@ -62,4 +62,13 @@ describe("Init command", () => {
 
     await expect(makeInit().run()).rejects.toBeDefined();
   });
+
+  it("rejects when the daemon returns success: false", async () => {
+    const mockClient = makeMockClient((_req, cb) =>
+      cb(null, { success: false, error: "item type already exists" })
+    );
+    vi.mocked(createDaemonClient).mockReturnValue(mockClient);
+
+    await expect(makeInit().run()).rejects.toThrow("item type already exists");
+  });
 });
