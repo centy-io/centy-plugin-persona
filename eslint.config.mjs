@@ -30,4 +30,10 @@ export default [
       ],
     },
   },
+  {
+    files: ['**/*.test.ts', '**/*.test.js'],
+    rules: {
+      'no-restricted-syntax': 'off',
+    },
+  },
 ]
