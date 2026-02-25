@@ -4,6 +4,21 @@
   "description": "Persona CLI by Centy",
   "license": "MIT",
   "author": "Centy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/centy-io/persona.git"
+  },
+  "homepage": "https://github.com/centy-io/persona#readme",
+  "bugs": {
+    "url": "https://github.com/centy-io/persona/issues"
+  },
+  "keywords": [
+    "centy",
+    "persona",
+    "cli",
+    "ux",
+    "user-story"
+  ],
   "engines": {
     "node": ">=18.0.0"
   },
@@ -15,7 +30,8 @@
     ".": "./dist/index.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
     "build": "tsup",
@@ -31,6 +47,7 @@
     "cspell": "^9.7.0",
     "eslint": "^9.39.3",
     "eslint-config-agent": "^2.0.1",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "husky": "^9.1.7",
     "tsup": "^8.0.0",
     "typescript": "^5.0.0"
