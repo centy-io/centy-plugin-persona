@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `CHANGELOG.md` included in npm package files
 
+### Changed
+
+- CI: upgraded to Node 22 and npm 11 to meet npm trusted publishing requirements
+- CI: switched to OIDC trusted publishing — no long-lived npm tokens required
+- CI: `npm publish` replaces `pnpm publish` for native OIDC token exchange support
+
 ## [0.1.1] - 2026-02-26
 
 ### Changed
@@ -29,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `--project` flag to specify the centy-tracked project path (default: `cwd`)
 - `--port` flag to configure the daemon port (default: `50051`)
 - Graceful skip when an item type already exists (`ALREADY_EXISTS` gRPC status)
-- OIDC-based npm publishing with provenance via GitHub Actions
+- GitHub Actions workflow for automated npm publishing on tag push
 - Pre-commit (lint + test) and pre-push (build + coverage) hooks via Husky
 - 100% test coverage enforced with Vitest
 - ESLint with `eslint-config-agent` and cspell for spell checking
