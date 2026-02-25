@@ -1,1 +1,2 @@
 # pre-push hook (configured in issue #10)
+pnpm run test:coverage

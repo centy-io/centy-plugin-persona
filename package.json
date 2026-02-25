@@ -41,10 +41,13 @@
     "lint:fix": "eslint src/ --fix",
     "lint:spell": "cspell \"**/*.{ts,md,json}\"",
     "prepublishOnly": "pnpm run build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
     "@types/node": "^25.3.0",
+    "@vitest/coverage-v8": "^4.0.18",
     "cspell": "^9.7.0",
     "eslint": "^9.39.3",
     "eslint-config-agent": "^2.0.1",
