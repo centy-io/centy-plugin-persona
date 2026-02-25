@@ -2,21 +2,53 @@ syntax = "proto3";
 
 package centy.v1;
 
-service CentyService {
+service CentyDaemon {
   rpc CreateItemType (CreateItemTypeRequest) returns (CreateItemTypeResponse);
 }
 
-message FieldDefinition {
+message ItemTypeFeatures {
+  bool display_number = 1;
+  bool status = 2;
+  bool priority = 3;
+  bool assets = 4;
+  bool org_sync = 5;
+  bool move = 6;
+  bool duplicate = 7;
+}
+
+message CustomFieldDefinition {
   string name = 1;
-  string type = 2;
+  string field_type = 2;
+  bool required = 3;
+  string default_value = 4;
+  repeated string enum_values = 5;
 }
 
 message CreateItemTypeRequest {
   string project_path = 1;
   string name = 2;
-  repeated FieldDefinition custom_fields = 3;
+  string plural = 3;
+  string identifier = 4;
+  ItemTypeFeatures features = 5;
+  repeated string statuses = 6;
+  string default_status = 7;
+  uint32 priority_levels = 8;
+  repeated CustomFieldDefinition custom_fields = 9;
+}
+
+message ItemTypeConfigProto {
+  string name = 1;
+  string plural = 2;
+  string identifier = 3;
+  ItemTypeFeatures features = 4;
+  repeated string statuses = 5;
+  string default_status = 6;
+  uint32 priority_levels = 7;
+  repeated CustomFieldDefinition custom_fields = 8;
 }
 
 message CreateItemTypeResponse {
-  string id = 1;
+  bool success = 1;
+  string error = 2;
+  ItemTypeConfigProto config = 3;
 }

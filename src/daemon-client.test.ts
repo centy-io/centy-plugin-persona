@@ -40,7 +40,7 @@ describe("createDaemonClient", () => {
     vi.mocked(loadPackageDefinition).mockReturnValue({
       centy: {
         v1: {
-          CentyService: function MockCentyService(
+          CentyDaemon: function MockCentyService(
             this: { close: () => void },
             address: string
           ) {

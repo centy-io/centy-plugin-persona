@@ -9,9 +9,10 @@ features:
   move: true
   duplicate: true
 statuses:
-- open
-- planning
-- in-progress
-- closed
+  - open
+  - planning
+  - in-progress
+  - closed
+  - Not wanted
 defaultStatus: open
 priorityLevels: 3

@@ -37,7 +37,7 @@ describe("Init command", () => {
   });
 
   it("registers persona and story types then closes the client", async () => {
-    const mockClient = makeMockClient((_req, cb) => cb(null, { id: "abc" }));
+    const mockClient = makeMockClient((_req, cb) => cb(null, { success: true }));
     vi.mocked(createDaemonClient).mockReturnValue(mockClient);
 
     await makeInit().run();

@@ -14,19 +14,39 @@ import { ProtoLoadError } from "./proto-load.error";
 
 const PROTO_PATH = join(__dirname, "..", "proto", "centy", "v1", "centy.proto");
 
-interface FieldDefinition {
+interface ItemTypeFeatures {
+  display_number?: boolean;
+  status?: boolean;
+  priority?: boolean;
+  assets?: boolean;
+  org_sync?: boolean;
+  move?: boolean;
+  duplicate?: boolean;
+}
+
+interface CustomFieldDefinition {
   name: string;
-  type: string;
+  field_type: string;
+  required?: boolean;
+  default_value?: string;
+  enum_values?: string[];
 }
 
 interface CreateItemTypeRequest {
   project_path: string;
   name: string;
-  custom_fields: FieldDefinition[];
+  plural: string;
+  identifier: string;
+  features?: ItemTypeFeatures;
+  statuses?: string[];
+  default_status?: string;
+  priority_levels?: number;
+  custom_fields?: CustomFieldDefinition[];
 }
 
 interface CreateItemTypeResponse {
-  id: string;
+  success: boolean;
+  error: string;
 }
 
 type MaybeServiceError = ServiceError | null;
@@ -77,7 +97,7 @@ export function createDaemonClient(port: number): CentyServiceClientInterface {
   if (!isGrpcObject(v1Pkg)) {
     throw new ProtoLoadError();
   }
-  const ServiceCtor = v1Pkg["CentyService"];
+  const ServiceCtor = v1Pkg["CentyDaemon"];
   if (!isCentyServiceCtor(ServiceCtor)) {
     throw new ProtoLoadError();
   }

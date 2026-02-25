@@ -1,34 +1,9 @@
 import { status } from "@grpc/grpc-js";
 import { Command, Flags } from "@oclif/core";
 import { createDaemonClient } from "../daemon-client";
+import { ITEM_TYPES } from "./item-types";
 
-interface FieldDef {
-  name: string;
-  type: string;
-}
-
-interface ItemTypeConfig {
-  name: string;
-  customFields: FieldDef[];
-}
-
-const ITEM_TYPES: ItemTypeConfig[] = [
-  {
-    name: "persona",
-    customFields: [
-      { name: "role", type: "string" },
-      { name: "goals", type: "string" },
-      { name: "pain-points", type: "string" },
-    ],
-  },
-  {
-    name: "story",
-    customFields: [
-      { name: "persona", type: "string" },
-      { name: "acceptance-criteria", type: "markdown" },
-    ],
-  },
-];
+type ItemTypeConfig = (typeof ITEM_TYPES)[number];
 
 export class Init extends Command {
   static description: string;
@@ -68,9 +43,13 @@ async function registerItemType(
       {
         project_path: projectPath,
         name: itemType.name,
+        plural: itemType.plural,
+        identifier: itemType.identifier,
+        statuses: itemType.statuses,
+        default_status: itemType.default_status,
         custom_fields: itemType.customFields,
       },
-      (error, _response) => {
+      (error, response) => {
         if (error) {
           if (error.code === status.ALREADY_EXISTS) {
             cmd.log(`Item type "${itemType.name}" already exists, skipping.`);
@@ -78,6 +57,10 @@ async function registerItemType(
             return;
           }
           reject(error);
+          return;
+        }
+        if (!response.success) {
+          reject(new Error(response.error));
           return;
         }
         cmd.log(`Created item type "${itemType.name}".`);
