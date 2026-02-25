@@ -37,12 +37,12 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
     "lint:spell": "cspell \"**/*.{ts,md,json}\"",
     "prepublishOnly": "pnpm run build",
-    "prepare": "husky",
-    "test:coverage": "vitest run --coverage"
+    "prepare": "husky"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.4.2",

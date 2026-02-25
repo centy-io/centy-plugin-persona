@@ -20,6 +20,15 @@ pnpm dev   # watch mode
 pnpm build # single build
 ```
 
+## Testing
+
+```sh
+pnpm test            # run tests (fast, no coverage)
+pnpm test:coverage   # run tests with 100% coverage enforcement
+```
+
+Coverage reports are written to `coverage/` (gitignored).
+
 ## Code Quality
 
 ```sh
@@ -27,6 +36,21 @@ pnpm lint        # check for lint errors
 pnpm lint:fix    # auto-fix lint errors
 pnpm lint:spell  # check spelling
 ```
+
+## Git Hooks
+
+This project uses [Husky](https://typicode.github.io/husky/) to enforce quality checks automatically.
+
+**pre-commit** (runs on every commit):
+- ESLint — blocks on lint errors
+- cspell — blocks on spelling errors
+- Tests — blocks if any test fails
+
+**pre-push** (runs before pushing to remote):
+- TypeScript build — blocks if compilation fails
+- Tests with 100% coverage — blocks if any file falls below 100% statement/branch/function/line coverage
+
+To bypass hooks in an emergency (not recommended): `git push --no-verify`
 
 ## Submitting Changes
 
