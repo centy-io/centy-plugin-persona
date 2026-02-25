@@ -42,7 +42,6 @@
     "lint:spell": "cspell \"**/*.{ts,md,json}\"",
     "prepublishOnly": "pnpm run build",
     "prepare": "husky",
-    "test": "vitest run",
     "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
