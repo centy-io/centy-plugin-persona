@@ -20,6 +20,8 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
     "lint:spell": "cspell \"**/*.{ts,md,json}\"",
     "prepublishOnly": "pnpm run build",
     "prepare": "husky"
@@ -27,6 +29,8 @@
   "devDependencies": {
     "@types/node": "^25.3.0",
     "cspell": "^9.7.0",
+    "eslint": "^9.39.3",
+    "eslint-config-agent": "^2.0.1",
     "husky": "^9.1.7",
     "tsup": "^8.0.0",
     "typescript": "^5.0.0"
