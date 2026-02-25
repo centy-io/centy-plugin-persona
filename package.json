@@ -36,6 +36,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "test": "vitest run",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
     "lint:spell": "cspell \"**/*.{ts,md,json}\"",
@@ -50,7 +51,8 @@
     "eslint-import-resolver-typescript": "^4.4.4",
     "husky": "^9.1.7",
     "tsup": "^8.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vitest": "^4.0.18"
   },
   "oclif": {
     "bin": "persona",

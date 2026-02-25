@@ -1,2 +1,3 @@
-pnpm run lint:spell
-pnpm run lint
+pnpm run lint || { echo "❌ Lint errors found. Run 'pnpm run lint:fix' to auto-fix, then review remaining errors."; exit 1; }
+pnpm run lint:spell || { echo "❌ Spelling errors found. Add words to cspell.json or fix the typos."; exit 1; }
+pnpm run test || { echo "❌ Tests failed. Fix failing tests before committing."; exit 1; }
