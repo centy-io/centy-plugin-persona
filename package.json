@@ -6,11 +6,11 @@
   "author": "Centy",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/centy-io/persona.git"
+    "url": "git+https://github.com/centy-io/centy-plugin-persona.git"
   },
-  "homepage": "https://github.com/centy-io/persona#readme",
+  "homepage": "https://github.com/centy-io/centy-plugin-persona#readme",
   "bugs": {
-    "url": "https://github.com/centy-io/persona/issues"
+    "url": "https://github.com/centy-io/centy-plugin-persona/issues"
   },
   "keywords": [
     "centy",
