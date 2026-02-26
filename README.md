@@ -1,4 +1,4 @@
-# @centy-io/persona
+# centy-plugin-persona
 
 A CLI plugin for [Centy](https://github.com/centy-io) that registers **persona** and **user story** item types into a centy-tracked project.
 
@@ -11,7 +11,7 @@ This lets teams track UX personas and user stories alongside their codebase usin
 
 ## Prerequisites
 
-`@centy-io/persona` communicates with the **centy daemon** over **gRPC**.
+`centy-plugin-persona` communicates with the **centy daemon** over **gRPC**.
 
 - The [centy daemon](https://github.com/centy-io/centy-daemon) must be installed and running locally (default: `127.0.0.1:50051`)
 - See the [centy-daemon repo](https://github.com/centy-io/centy-daemon) for installation and setup instructions
@@ -20,10 +20,10 @@ This lets teams track UX personas and user stories alongside their codebase usin
 
 ```sh
 # Run without installing
-npx @centy-io/persona init
+npx centy-plugin-persona init
 
 # Install globally
-npm install -g @centy-io/persona
+npm install -g centy-plugin-persona
 ```
 
 ## Usage

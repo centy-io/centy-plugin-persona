@@ -1,6 +1,6 @@
 {
-  "name": "@centy-io/persona",
-  "version": "0.1.2",
+  "name": "centy-plugin-persona",
+  "version": "0.1.3",
   "description": "Persona CLI by Centy",
   "license": "MIT",
   "author": "Centy",
